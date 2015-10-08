@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3698671940">
+    <data-source source="LOCAL" name="Django default" uuid="5281f820-b9e0-4673-8e68-965a3796dd46">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://renhongleiz.mysql.rds.aliyuncs.com:3306/vpsign</jdbc-url>
+      <user-name>ren</user-name>
+      <user-password>dfe2dfcbdfd8dfd8dfd3df9bdf98df99</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
