@@ -4,6 +4,8 @@ from django.http import HttpResponse, JsonResponse
 import simplejson as json
 from mappers import *
 from django.conf import settings
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 def error_response(error, **kwargs):
 	code, message = error_mapping[error]
@@ -25,3 +27,6 @@ class ApiError(Exception):
 		Exception.__init__(self)
 		self.key = key if key in error_mapping else "UNKNOWN"
 		self.kwargs = kwargs
+
+def render_view_shortcut(request,module,name):
+    return render_to_response(module+"/"+name+".html", locals(), context_instance=RequestContext(request))

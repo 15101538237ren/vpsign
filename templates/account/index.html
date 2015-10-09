@@ -1,27 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<form action="{% url 'accounts:admin-login' %}"
-            method="post"
-            class="form-horizontal">
-            {% csrf_token %}
-            <div class="form-group">
-                <label class="control-label">用户名</label>
-                <div class="col-xs-12">
-                    <div class="col-xs-6">
-                        <input type="text" class="form-control" name="username" />
-                    </div>
-                </div>
-            </div>
-         <div class="form-group">
-                <label class="control-label">密码</label>
-                <div class="col-xs-12">
-                    <div class="col-xs-6">
-                        <input type="password" class="form-control" name="password" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-sm-offset-3">
-                <input type="submit" value="登录">
-            </div>
-          </form>
+{% if request.user.is_authenticated %}
+        <div class="pull-right">
+            欢迎您：{{request.user}}
+            <a class="btn danger small" href="{% url 'account:logout' %}">注销</a>
+        </div>
+{% else %}
+          <a href="% url 'account:login' %}"></a>
+{% endif %}
 {% endblock %}
